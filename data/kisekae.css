@@ -1,0 +1,261 @@
+
+body, html {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	font-size: 0.9rem;
+}
+
+body {
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #F9F9F9), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #F9F9F9),color-stop(.75, #F9F9F9), color-stop(.75, transparent),to(transparent));
+	-webkit-background-size: 7px 7px;
+}
+
+/* キャンバス */
+#Canvas {
+	width:  0px;
+	height: 0px;
+	background-color: #ddd;
+	image-rendering: pixelated;
+	image-rendering : -moz-crisp-edges;    /* Firefox */
+}
+
+div.all{
+	background-color: #fff;
+	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+	width: 1000px;
+	min-width: 1000px;
+	margin: 0 auto;
+}
+
+/* 画面右と左が入る、本体コンテナ */
+div.main{
+	display: flex;
+	justify-content: center;
+}
+
+/* 画面左右 */
+div.right, div.left {
+	box-sizing: border-box;
+	padding: 30px;
+}
+
+/* 画面左 */
+div.left{
+	position: sticky;
+	width: 231px;
+	height: 100%;
+	top: 0;
+	padding-right: 0;
+	line-height: 1.4rem;
+}
+
+/* 画面右 */
+div.right{
+}
+
+/* 画面右のスクロールする中身用 */
+div.right-scroll{
+}
+
+/* パーツ・色ピッカーの追加されるコンテナ */
+#ImageContainer {
+}
+
+/* パーツ選択用イメージ */
+img.parts{
+	image-rendering: pixelated;
+	image-rendering : -moz-crisp-edges;    /* Firefox */
+}
+
+/* パーツのコンテナ */
+div.parts-container{
+	position: relative;
+	border: solid 1px #999;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+/* パーツごとのパレットのコンテナ */
+div.palette-container{
+}
+
+/* 使用色とパレットのコンテナ */
+.Result {
+	display: flex;
+	padding-top: 10px;
+}
+
+/* 現在の使用色表示用コンテナ */
+#ResultPaletteContainer {
+	padding-left: 10px;
+	width : 146px;
+}
+
+/* 現在の使用色表示 */
+div.color-sample{
+	width:10;
+	height:10;
+	display: inline-block;
+}
+
+/* 現在使用色の数表示*/
+.used-colors{
+}
+
+/* 現在のスポイトの色 */
+#Spuit{
+	color : #fff;
+	font-size: 0.4rem;
+	text-align : center;
+	width : 44px;
+	height : 44px;
+	border-radius: 2px;
+	line-height : 44px
+}
+
+/* パレット関係の枠 */
+.palette-container {
+	border-top: dotted 1px #999;
+	margin-top: 12px;
+	padding: 8px 6px 0;
+}
+
+/* カラーピッカー呼び出しボタン */
+input.color-picker{
+	width:22px;
+	height:30px;
+	margin-right: 1px;
+	padding: 0;
+	border: solid 1px #bbb;
+	background-color: #fff;
+	vertical-align: middle;
+	border-radius: 2px;
+}
+
+input.color-picker:focus {
+	outline:0;
+}
+
+/* resetボタン */
+.default-button{
+	width:50px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+/* 前髪の色に合わせるボタン */
+.synchronize-button{
+	width:148px;
+	margin-left: 10px;
+}
+
+/* 適用ボタン */
+.apply-template-button{
+	width:50px;
+}
+
+/* 画像を保存・設定を保存ボタン */
+.default_button {
+	margin-bottom: 10px;
+}
+
+.apply-template-button, .default_button, .default-button, .synchronize-button{
+	height:30px;
+	vertical-align: middle;
+	border: solid 1px #999;
+	background-color: #f4f4f4;
+	border-radius: 5px;
+}
+
+/* カラーテンプレート選択ボタン */
+.apply-template-select{
+	margin-right: 2px;
+	margin-left: 10px;
+	height:30px;
+	vertical-align: middle;
+	border-radius: 5px;
+}
+
+/* パーツタイトル */
+.parts-container-title{
+	position: absolute;
+	display: inline-block;
+	top: -7px;
+	left: 10px;
+	padding: 0 9px;
+	line-height: 1;
+	background: #FFF;
+	color: #666;
+}
+
+/* ヘッダ */
+.header {
+	display: flex;
+	justify-content: center;
+	background: #f9f9f9;
+	border-bottom: dotted 1px #e0e0e0;
+}
+
+/* フッタ */
+.footer {
+	position: relative;
+	text-align:center;
+	background: #f9f9f9;
+	border-top: dotted 1px #e0e0e0;
+	padding: 70px 0;
+}
+
+#LoadingOverlay{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 2rem;
+	background: rgba(255, 255, 255, 1);
+	z-index: 99999;
+}
+
+hr {
+	border-top: 1px dotted #8c8b8b;
+	border-bottom: none;
+	margin: 20px 0;
+}
+
+/* 未使用。ファイルドロップ機能が実装されていた頃のもの 
+div.dropzone {
+	width: 500px;
+	height: 100px;
+	border: 1px #ababab dashed;
+	margin: 50px auto;
+}
+
+div.dropzone p {
+	text-align: center;
+	line-height: 100px;
+	margin: 0;
+	padding: 0;
+}
+
+色コピーボタン
+input.color-copy-button{
+	width:55px;
+	height:25px;
+	margin-top: 5px;
+	margin-right: 2px;
+}
+
+色ペーストボタン
+input.color-paste-button{
+	width:60px;
+	height:25px;
+	margin-top: 5px;
+	margin-right: 2px;
+}
+
+*/

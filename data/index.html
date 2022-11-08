@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+     <meta charset="UTF-8"> 
+    <script type="text/javascript" src="./psd.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./dotKisekae.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="./kisekae.css">
+  </head>
+  <body onload="onLoad();" ondragover="onDragOverSetting(event);" ondrop="onDropSetting(event);">
+<!-- <div class="dropzone" ondrop="onDrop(event);" ondragover="onDragOver(event);"><p>drop psd file here.</p></div><br> -->
+    <div class="all">
+      <div class="main">
+        <div class="left">
+          <canvas id="Canvas">您需要一个支持画布标签的浏览器</canvas><br>
+          <div class="Result">
+            <div id="Spuit">取色器</div>
+            <div id="ResultPaletteContainer"></div>
+          </div>
+          <hr>
+          <input type="button" class="default_button" value="保存" onclick="saveCanvasAsPng(event);"> <input type="checkbox" id="check2x" class="default_checkbox">2倍扩大<br>
+          <input type="button" class="default_button" value="导出配置" onclick="saveSetting(event);"><br>
+          将保存的配置文件拖放到此窗口中打开
+          <hr>
+        </div>
+        <div class="right">
+          <div class="right-scroll">
+            <div id="ImageContainer"></div><br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="LoadingOverlay">
+      加载中....
+    </div>
+  </body>
+</html>
